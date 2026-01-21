@@ -1,0 +1,80 @@
+-Sur github j'ai installer DumpIt
+
+-J'ai éxécuter le DumpIT.exe
+
+-A la fin de programme ca ma crée un fichier json avec ces infos :
+
+{
+    "debugInfo": {
+        "kdCopyDataBlock": -8789678168268,
+        "kdDebuggerData": -8789669441472,
+        "kdpDataBlockEncoded": -8789669027432,
+        "ntosBase": -8789684125696,
+        "pdbAge": 1,
+        "pdbGuid": "0385A3E5-1169-BA7F-8471-6B1C792977F7",
+        "pdbName": "ntkrnlmp.pdb",
+        "regCr0": 2147811379,
+        "regCr3": 8042921984,
+        "regCr4": 11865848,
+        "regNtCr3": 1761280
+    },
+    "fileInfo": {
+        "fileSize": 16835276800,
+        "sha256": "fc6be1905fc95302a06c2e39d0ca4d3c88f9ddb0783913b4ed5c01055c98ecf6"
+    },
+    "machineInfo": {
+        "architectureType": "x64",
+        "date": "2026-01-20T14:41:08.498Z",
+        "machineId": "34444335-3930-4846-5951-514839304435",
+        "machineName": "LAPTOP-P9LUPVMK",
+        "maxPhysicalMemory": 20128464896,
+        "numberProcessors": 12,
+        "timestamp": 134133936022921180,
+        "userName": "Antonin-PC",
+        "workgroupName": "WORKGROUP"
+    },
+    "osVersion": {
+        "buildNumber": 26200,
+        "majorVersion": 10,
+        "minorVersion": 0,
+        "productType": 1,
+        "servicePackMajor": 0,
+        "servicePackMinor": 0,
+        "suiteMask": 768
+    },
+    "serviceInfo": {
+        "acquisitionTime": "1:03",
+        "ntStatus": 0,
+        "serviceName": "DumpIt",
+        "serviceVersion": "3.0.20171228.1",
+        "totalAccessiblePages": 4094649,
+        "totalInaccessiblePages": 0,
+        "totalPhysicalPages": 4094649
+    }
+}
+
+
+✔ Outil d’acquisition utilisé
+
+DumpIt v3.0
+
+Acquisition RAM à chaud, méthode standard en forensic
+
+✔ Dump mémoire complet et exploitable
+
+Taille cohérente (≈ 16,8 Go pour ≈ 20 Go de RAM)
+
+SHA-256 calculé → intégrité garantie
+
+Architecture x64 détectée
+
+Aucune page inaccessible → dump fiable
+
+✔ Traçabilité
+
+Machine, utilisateur, OS, date/heure documentés
+
+Hash présent (élément clé en forensic)
+
+
+

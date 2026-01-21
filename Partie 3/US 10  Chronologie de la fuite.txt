@@ -1,0 +1,14 @@
+-Faire la meme manipulation que l'US 9
+
+-Aller dans USBthor :
+
+First Install	Colonne First Installed	2020-02-03 12:12:32
+Last Connected	Colonne Last Connected	2020-02-03 12:44:21
+
+Chronologie :
+
+Date / Heure	Événement
+
+2020-02-03 12:12:32	Première installation de la clé USB
+2020-02-03 12:44:21	Connexion de la clé USB
+2020-02-03 12:45:00	Retrait de la clé USB
