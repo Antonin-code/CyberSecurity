@@ -5,6 +5,7 @@
 First Install	Colonne First Installed	2020-02-03 12:12:32
 Last Connected	Colonne Last Connected	2020-02-03 12:44:21
 
+------------------------------------------------------------------
 Chronologie :
 
 Date / Heure	Événement
