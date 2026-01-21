@@ -1,0 +1,11 @@
+-Modifications système observées : surchage du processeur, lattence, surchauffe.
+
+-Activités réseau identifiées : gros pique ethernet ?
+
+-(installation de procmon)
+
+-installation d'un dossier "Windsyst"
+
+-différent entre le fichier crée sur notre bureau, il y a un fichier en plus "log"
+
+-Nous avons découvert que ce fichier est un keylogger car toutes les choses qu'on saisie se retrouve dans ce fichier

@@ -1,0 +1,19 @@
+Le malware agit comme un keylogger, permettant la capture des frappes clavier de l’utilisateur.
+Ce comportement entraîne un risque élevé de compromission des identifiants, mots de passe et données sensibles.
+De plus, son exécution provoque une dégradation des performances du système, rendant la machine instable et ralentissant son utilisation.
+------------------------------------------------------------------
+Au regard de la nature du malware et de ses capacités de surveillance des entrées clavier, le niveau de risque est évalué comme élevé.
+
+--------------------------------------------------------------------
+
+Il est recommandé d’isoler immédiatement la machine infectée, de procéder à une suppression complète du malware, puis de réinitialiser l’ensemble des identifiants susceptibles d’avoir été compromis.
+Des mesures préventives telles que la mise à jour régulière du système et l’utilisation d’outils de protection adaptés doivent être mises en place afin de réduire les risques futurs.
+
+--------------------------------------------------------------------
+
+-Résumé :
+
+Le malware analysé présente un comportement de type keylogger, permettant la capture des frappes clavier et exposant les informations sensibles de l’utilisateur.
+Son exécution a également entraîné un ralentissement significatif du système, impactant les performances globales de la machine.
+Compte tenu de ces éléments, le niveau de risque est évalué comme élevé.
+Il est recommandé d’isoler la machine infectée, de supprimer le malware, de réinitialiser les mots de passe et de renforcer les mesures de sécurité afin de prévenir toute réinfection.

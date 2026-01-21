@@ -1,0 +1,40 @@
+-Apres avoir éxécuter le malware :
+
+1.Fonctions principales identifiées :
+
+-On observe que l'utilisation de la RAM est fortement utilisé (ralentissement du pc) et le processeur
+
+---------------------------------------------------------------------------------------
+
+-Jai installer pestudio pour analyser la structure du malware :
+
+L’analyse des imports avec PEStudio montre une forte utilisation de la bibliothèque standard C++ (libstdc++), suggérant un binaire compilé en C++ avec abstraction des appels système, ce qui peut compliquer l’analyse statique et indiquer une volonté d’évasion.
+-----------------------------------------------------------------------------------
+1. Analyse des chaines :
+
+L’analyse des chaînes a révélé la présence d’appels à des API Windows sensibles, notamment VirtualProtect, VirtualQuery, GetAsyncKeyState et GetKeyState.
+Ces chaînes, non présentes dans la table d’imports, suggèrent une résolution dynamique des API, technique couramment utilisée pour l’évasion et la dissimulation des fonctionnalités malveillantes.
+---------------------------------------------------------------------------------
+2. Analyse des imports :
+
+L’analyse des imports montre une utilisation quasi exclusive de la bibliothèque standard C++, sans appel direct aux API Windows critiques.
+Cette absence d’imports explicites suggère une volonté de masquer les dépendances système et d’entraver l’analyse statique.
+
+-----------------------------------------------------------------------------------
+3.Analyse de sections
+
+L’analyse des sections montre que le binaire est composé de huit sections, dont l’entropie est globalement comprise autour de 5.
+Cette valeur indique une structure relativement standard, sans mécanisme de packing ou de chiffrement fort.
+L’absence de sections à entropie élevée suggère que la dissimulation repose davantage sur des techniques de résolution dynamique des API que sur une obfuscation binaire avancée.
+
+
+-------------------------------------------------------------------------------------------
+
+Analyse fonctionnelle
+API	Signification	Comportement associé
+VirtualProtect	Change les permissions mémoire	Injection / shellcode
+VirtualQuery	Inspection mémoire	Évasion / analyse environnement
+GetAsyncKeyState	Capture clavier	Keylogging
+GetKeyState	État clavier	Surveillance utilisateur
+GetCurrentProcess*	Info processus	Anti-debug / ciblage
+GetCurrentThreadId	Contexte d’exécution	Anti-analyse
