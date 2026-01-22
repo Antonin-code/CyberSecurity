@@ -38,3 +38,20 @@ GetAsyncKeyState	Capture clavier	Keylogging
 GetKeyState	État clavier	Surveillance utilisateur
 GetCurrentProcess*	Info processus	Anti-debug / ciblage
 GetCurrentThreadId	Contexte d’exécution	Anti-analyse
+
+------------------------------------------------------------------
+
+On a ensuite utilsier IDA pour analyser le malware plus en détail
+
+ONa sélectionner l executable du malware :
+
+Grace au Res.exe :
+
+et on s'est rendus compte que le pirate a fait en sorte qu en executant le malware cela copie le meme dossier dans un autre endroit pour le cacher et qu il y en une copie
+ pour de la persistance
+
+Grace au .env :
+
+on s'est rendus compte qu'il a configurer un serveur de messagerie avec un username et un mot de passe et qu'il envoi a son adresse email "smtp.gmail.com" le fichier log.txt dés que le .res est éxécute
+
+On a réussi a voir que l'origine du virus venait de chine
