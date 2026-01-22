@@ -2,7 +2,7 @@
 
 - J'ai éxécuter le DumpIT.exe
 
--A la fin de programme ca m'a crée un fichier json avec ces infos :
+- A la fin de programme ca m'a crée un fichier json avec ces infos :
 
 {
     "debugInfo": {
@@ -52,6 +52,7 @@
         "totalPhysicalPages": 4094649
     }
 }
+
 
 Jai ensuite utiliser volatility avec cette commande :
 

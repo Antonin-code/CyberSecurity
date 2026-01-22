@@ -1,6 +1,6 @@
 -Recherche d'un outil pour scanner un malware
 
-- Nous aavons  trouver VirusTotal
+- Nous avons  trouver VirusTotal
 
 -On met le fichier du malware dedans :
 
@@ -17,14 +17,6 @@ Last Analysis : 2025-12-02 09:08:07 UTC
 --------------------------------------------------------------------
 1.Hash calculé :
 
-À quoi il sert
-
-Rechercher le même malware plus tard
-
-Comparer avec d’autres bases (MITRE, MISP, MalwareBazaar, etc.)
-
-Prouver qu’il s’agit exactement du même échantillon
-
 MD5 : 954f7191688a0d4eb5a60692bd27f1e3
 SHA-1: 1d9e88ef0ab9003b4dc8f34cf0341105ac3cdb7e
 SHA-256: alaf8eeaa7fda7ced591a72c572a12c2298ddb763defaa36ce5b17be14
@@ -34,9 +26,7 @@ SHA-256: alaf8eeaa7fda7ced591a72c572a12c2298ddb763defaa36ce5b17be14
 
 Virus 47 / 69
 
-+ screen de thiméo sur les antivirus
-
-La liste des antivirus
+il y a La liste des antivirus
 
 Le verdict de chacun (Malware / Trojan / Clean)
 
