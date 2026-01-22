@@ -1,12 +1,12 @@
--Apres avoir éxécuter le malware :
+- Apres avoir éxécuter le malware :
 
-1.Fonctions principales identifiées :
+1. Fonctions principales identifiées :
 
--On observe que l'utilisation de la RAM est fortement utilisé (ralentissement du pc) et le processeur
+- On observe que l'utilisation de la RAM est fortement utilisé (ralentissement du pc) et le processeur
 
 ---------------------------------------------------------------------------------------
 
--Jai installer pestudio pour analyser la structure du malware :
+- J'ai installé pestudio pour analyser la structure du malware :
 
 L’analyse des imports avec PEStudio montre une forte utilisation de la bibliothèque standard C++ (libstdc++), suggérant un binaire compilé en C++ avec abstraction des appels système, ce qui peut compliquer l’analyse statique et indiquer une volonté d’évasion.
 -----------------------------------------------------------------------------------
@@ -27,7 +27,6 @@ L’analyse des sections montre que le binaire est composé de huit sections, do
 Cette valeur indique une structure relativement standard, sans mécanisme de packing ou de chiffrement fort.
 L’absence de sections à entropie élevée suggère que la dissimulation repose davantage sur des techniques de résolution dynamique des API que sur une obfuscation binaire avancée.
 
-
 -------------------------------------------------------------------------------------------
 
 Analyse fonctionnelle
@@ -41,17 +40,17 @@ GetCurrentThreadId	Contexte d’exécution	Anti-analyse
 
 ------------------------------------------------------------------
 
-On a ensuite utiliser IDA pour analyser le malware plus en détail
+On a ensuite utilisé IDA pour analyser le malware plus en détail
 
-ONa sélectionner l executable du malware :
+On a sélectionné l'éxecutable du malware :
 
 Grace au Res.exe :
 
-et on s'est rendus compte que le pirate a fait en sorte qu en executant le malware cela copie le meme dossier dans un autre endroit pour le cacher et qu il y en une copie
- pour de la persistance
+On s'est rendus compte que le pirate a fait en sorte qu'en executant le malware cela copie le meme dossier dans un autre endroit pour le cacher et qu il y en une copie
+pour de la persistance
 
 Grace au .env :
 
-on s'est rendus compte qu'il a configurer un serveur de messagerie avec un username et un mot de passe et qu'il envoi a son adresse email "smtp.gmail.com" le fichier log.txt dés que le .res est éxécute
+On s'est rendus compte qu'il a configuré un serveur de messagerie avec un username et un mot de passe et qu'il envoie à son adresse email "smtp.gmail.com" le fichier log.txt dés que le .res est éxécute
 
-On a réussi a voir que l'origine du virus venait de chine
+On a réussi à voir que l'origine du virus venait de chine

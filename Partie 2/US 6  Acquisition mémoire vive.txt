@@ -1,8 +1,8 @@
--Sur github j'ai installer DumpIt
+- Pour commencer j'ai installer DumpIt
 
--J'ai éxécuter le DumpIT.exe
+- J'ai éxécuter le DumpIT.exe
 
--A la fin de programme ca ma crée un fichier json avec ces infos :
+-A la fin de programme ca m'a crée un fichier json avec ces infos :
 
 {
     "debugInfo": {
@@ -52,30 +52,6 @@
         "totalPhysicalPages": 4094649
     }
 }
-
-
-✔ Outil d’acquisition utilisé
-
-DumpIt v3.0
-
-Acquisition RAM à chaud, méthode standard en forensic
-
-✔ Dump mémoire complet et exploitable
-
-Taille cohérente (≈ 16,8 Go pour ≈ 20 Go de RAM)
-
-SHA-256 calculé → intégrité garantie
-
-Architecture x64 détectée
-
-Aucune page inaccessible → dump fiable
-
-✔ Traçabilité
-
-Machine, utilisateur, OS, date/heure documentés
-
-Hash présent (élément clé en forensic)
-
 
 Jai ensuite utiliser volatility avec cette commande :
 

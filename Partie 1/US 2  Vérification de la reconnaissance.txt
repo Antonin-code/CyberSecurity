@@ -1,12 +1,14 @@
 -Recherche d'un outil pour scanner un malware
 
--VirusTotal est trouvé
+- Nous aavons  trouver VirusTotal
 
 -On met le fichier du malware dedans :
 
--Un score apparait : On va sur details :
+-Un score apparait :
 
-on voit :
+-On va sur details :
+
+-on voit :
 
 First Submission : 2022-10-13 07:43:41 UTC
 Last Submission : 2026-01-20 20:49:41 UTC
@@ -45,11 +47,7 @@ Parfois le nom de la famille (ex : Trojan.Generic, AgentTesla, etc.)
 
 1. Détections multi-éditeurs → bases de signatures
 
-👉 Capture 1 – “Security vendors’ analysis”
-
-Ce que tu observes :
-
-Très grand nombre d’éditeurs détectent le fichier
+Un Très grand nombre d’éditeurs détectent le fichier
 
 Classification récurrente :
 
@@ -71,20 +69,14 @@ Avast / AVG : Win32:Trojan-gen
 
 ESET : Spy.KeyLogger
 
-👉 Ce que ça prouve
-
 Le fichier correspond à des signatures déjà présentes dans les bases antivirus
 
 Il n’est pas inconnu, ni nouveau
 
-✅ Ceci est une comparaison directe avec des bases existantes
-
 -----------------------------------------------------------------------
 2. Sandbox & comportement → bases comportementales
 
-👉 Capture 2 – CAPE Sandbox / Zenbox + MITRE ATT&CK
-
-Ce que tu prends :
+Capture 2 – CAPE Sandbox / Zenbox + MITRE ATT&CK
 
 Sandbox activées : CAPE Sandbox, Zenbox
 
@@ -106,30 +98,10 @@ Credential Access – Input Capture (Keylogging)
 
 Persistence via Registry
 
-👉 Ce que ça prouve
-
 Le comportement correspond exactement à des techniques déjà référencées
 
 MITRE ATT&CK = base de connaissance officielle
 
-✅ Comparaison avec des bases comportementales reconnues
-
------------------------------------------------------------------------
-3. Type de malware identifié → correspondance connue
-
-À partir de tes captures, tu peux affirmer :
-
-Malware de type Keylogger
-
-Ciblant Win32
-
-Techniques standards, non expérimentales
-
-👉 Ce n’est pas un malware inédit.
-
-CE QU’IL FAUT ÉCRIRE (réponse attendue)
-
-Tu peux copier-coller tel quel :
 
 La comparaison avec les bases existantes montre que l’échantillon est déjà connu. Il est détecté par un grand nombre de moteurs antivirus, qui l’identifient majoritairement comme un Trojan de type Keylogger (Win32). Les résultats des sandbox (CAPE, Zenbox) ainsi que l’analyse MITRE ATT&CK mettent en évidence des techniques documentées telles que la persistance, la capture d’entrées et l’accès aux identifiants. Ces éléments confirment que le malware correspond à des signatures et comportements déjà répertoriés dans les bases de sécurité existantes.
 

@@ -1,6 +1,6 @@
--J'ai fais une recherche pour savoir quel outil utilisé
+- J'ai fais une recherche pour savoir quel outil utilisé
 
--J'ai trouver le logiciel FTK Imager pour l'acquisition disque
+- J'ai trouver le logiciel FTK Imager pour l'acquisition disque
 
 et Autopsy pour l'analyse forensique
 
@@ -34,17 +34,16 @@ Lancer FTK Imager en administrateur
 Lancer l’acquisition
 
 
-✅ Critère “Image disque bit-à-bit réalisée” validé
-faut ragarder le menua gauche ; la rebrique Analysis Results → Encryption Suspected
+il faut ensuite regarder le menu a gauche ; la rubrique Analysis Results → Encryption Suspected
 
-Ca a créer des images du disk et le virus est dans la première image
+Ca à créer des images du disk et le virus est dans la première image
 
 -----------------------------------------------------------------------
 2. Analyse forensique :
 
 Les images disque générées constituent la base de l’analyse forensique.
 
-Jia utilser l'image où le virus est présent et lors de l'analyse :
+Jia utiliser l'image où le virus est présent et lors de l'analyse :
 
 j'ai été dans "encryption Suspected" et il y en a un :
 

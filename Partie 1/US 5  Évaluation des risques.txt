@@ -3,6 +3,7 @@ Ce comportement entraîne un risque élevé de compromission des identifiants, m
 De plus, son exécution provoque une dégradation des performances du système, rendant la machine instable et ralentissant son utilisation.
 Toutes les informations sont envoyés sur un serveur de messagerie et a une adresse email
 ------------------------------------------------------------------
+
 Au regard de la nature du malware et de ses capacités de surveillance des entrées clavier, le niveau de risque est évalué comme élevé.
 
 --------------------------------------------------------------------
@@ -12,7 +13,7 @@ Des mesures préventives telles que la mise à jour régulière du système et l
 
 --------------------------------------------------------------------
 
--Résumé :
+- Résumé :
 
 Le malware analysé présente un comportement de type keylogger, permettant la capture des frappes clavier et exposant les informations sensibles de l’utilisateur.
 Son exécution a également entraîné un ralentissement significatif du système, impactant les performances globales de la machine.

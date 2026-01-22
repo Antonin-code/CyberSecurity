@@ -1,4 +1,4 @@
--Faire la meme manipulation que l'US 9
+- Faire la meme manipulation que l'US 9
 
 -Aller dans USBthor :
 
