@@ -1,3 +1,59 @@
 -J'ai fais une recherche pour savoir quel outil utilisé
 
--J'ai trouver le logiciel
+-J'ai trouver le logiciel FTK Imager pour l'acquisition disque
+
+et Autopsy pour l'analyse forensique
+
+-----------------------------------------------------------------------
+1. Acquisition disque :
+
+Étapes :
+
+Lancer FTK Imager en administrateur
+
+    File → Create Disk Image
+
+        Choisir :
+
+            Physical Drive (disque entier)
+
+    Sélectionner le disque source
+
+    Choisir le format :
+
+        E01 (recommandé) ou RAW
+
+        Activer :
+
+            MD5
+
+            SHA-256
+
+    Choisir le disque de destination
+
+Lancer l’acquisition
+
+
+✅ Critère “Image disque bit-à-bit réalisée” validé
+faut ragarder le menua gauche ; la rebrique Analysis Results → Encryption Suspected
+
+Ca a créer des images du disk et le virus est dans la première image
+
+-----------------------------------------------------------------------
+2. Analyse forensique :
+
+Les images disque générées constituent la base de l’analyse forensique.
+
+Jia utilser l'image où le virus est présent et lors de l'analyse :
+
+j'ai été dans "encryption Suspected" et il y en a un :
+
+Source type : file
+
+Score : liekely notable
+
+justification : Suspected encryption due to high entropy (7.994218)
+
+Comment :  Suspected encryption due to high entropy (7.994218)
+
+et ensuite il y a le file path :

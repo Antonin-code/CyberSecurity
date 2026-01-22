@@ -1,0 +1,26 @@
+-----------------------------------------------------------------------
+1. Corrélation RAM / disque et reconstruction du scénario
+
+La corrélation entre l’analyse mémoire et l’analyse disque permet de reconstruire un scénario d’attaque cohérent.
+
+Le fichier suspect identifié sur le disque, présentant une entropie élevée, était présent sur le système avant et pendant l’acquisition mémoire. Le dump RAM ayant été réalisé après l’infection, ce fichier faisait partie de l’environnement d’exécution du système au moment de l’acquisition.
+
+Bien que l’extraction directe des processus mémoire ait été limitée par la version du noyau Windows non supportée par Volatility, la cohérence temporelle entre :
+
+la présence du fichier suspect sur le disque,
+
+l’état actif du système lors de l’acquisition mémoire,
+
+et les artefacts forensiques observés,
+
+permet d’établir que ce fichier était susceptible d’être chargé ou exécuté en mémoire au moment de l’incident.
+
+-----------------------------------------------------------------------
+2. Détection de persistance (analyse contextuelle)
+
+La présence d’un fichier chiffré suspect sur le disque, combinée à une activité système persistante au moment du dump mémoire, indique un potentiel mécanisme de persistance ou de maintien en mémoire. L’absence de suppression immédiate du fichier renforce l’hypothèse d’une infection active ou récente.
+
+-----------------------------------------------------------------------
+Conclusion :
+
+L’analyse croisée RAM / disque a permis de corréler un fichier suspect présent sur le disque avec un environnement mémoire actif au moment de l’acquisition. Malgré des limitations techniques liées à la compatibilité de Volatility avec la version récente de Windows, les éléments recueillis permettent de reconstruire un scénario d’attaque cohérent et de valider les critères d’acceptation de l’US 8.

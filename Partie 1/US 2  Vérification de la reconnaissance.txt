@@ -12,7 +12,7 @@ First Submission : 2022-10-13 07:43:41 UTC
 Last Submission : 2026-01-20 20:49:41 UTC
 Last Analysis : 2025-12-02 09:08:07 UTC
 
-------------------------------------------------
+--------------------------------------------------------------------
 1.Hash calculé :
 
 À quoi il sert
@@ -42,7 +42,6 @@ Parfois le nom de la famille (ex : Trojan.Generic, AgentTesla, etc.)
 
 -----------------------------------------------------------------------
 3. Comparaison avec bases existantes
-
 
 1. Détections multi-éditeurs → bases de signatures
 
@@ -80,6 +79,7 @@ Il n’est pas inconnu, ni nouveau
 
 ✅ Ceci est une comparaison directe avec des bases existantes
 
+-----------------------------------------------------------------------
 2. Sandbox & comportement → bases comportementales
 
 👉 Capture 2 – CAPE Sandbox / Zenbox + MITRE ATT&CK
@@ -114,6 +114,7 @@ MITRE ATT&CK = base de connaissance officielle
 
 ✅ Comparaison avec des bases comportementales reconnues
 
+-----------------------------------------------------------------------
 3. Type de malware identifié → correspondance connue
 
 À partir de tes captures, tu peux affirmer :

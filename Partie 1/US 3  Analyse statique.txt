@@ -41,7 +41,7 @@ GetCurrentThreadId	Contexte d’exécution	Anti-analyse
 
 ------------------------------------------------------------------
 
-On a ensuite utilsier IDA pour analyser le malware plus en détail
+On a ensuite utiliser IDA pour analyser le malware plus en détail
 
 ONa sélectionner l executable du malware :
 
