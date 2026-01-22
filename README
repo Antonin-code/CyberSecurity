@@ -1,0 +1,238 @@
+# README – Analyse de Malware et Investigation Forensic
+
+## 1. Contexte du projet
+
+Ce projet a pour objectif de réaliser une analyse complète d’un incident de sécurité impliquant un malware et une potentielle fuite de données via un périphérique USB.  
+L’approche adoptée suit une méthodologie professionnelle utilisée en SOC, reverse engineering et forensic.
+
+Le projet est structuré autour de plusieurs User Stories (US) couvrant :
+- l’analyse malware (statique et dynamique),
+- l’évaluation des risques,
+- l’identification d’un périphérique USB,
+- l’établissement d’une chronologie de fuite de données.
+
+---
+
+# PARTIE 1 – ANALYSE DU MALWARE
+
+## 2. US 1 – Mise en place d’un environnement sécurisé
+
+### Objectif  
+Exécuter le malware dans un environnement isolé afin de protéger le système hôte et observer son comportement réel.
+
+### Mise en œuvre  
+- Installation de VirtualBox  
+- Déploiement d’une machine virtuelle Windows 10  
+- Configuration du réseau en mode isolé (réseau SSH / réseau contrôlé)  
+- Installation et exécution du malware exclusivement dans la machine virtuelle  
+
+### Résultat  
+L’environnement est totalement isolé du système hôte, permettant une analyse sans risque de propagation.
+
+Critères d’acceptation validés :  
+- Environnement isolé  
+- Absence de fuite réseau non contrôlée  
+
+---
+
+## 3. US 2 – Vérification de la reconnaissance du malware
+
+### Objectif  
+Déterminer si le malware est déjà connu ou s’il s’agit d’une menace nouvelle.
+
+### Outil utilisé  
+- VirusTotal  
+
+### Analyse effectuée  
+
+#### 1. Calcul des hashs  
+
+- **MD5** : 954f7191688a0d4eb5a60692bd27f1e3  
+- **SHA-1** : 1d9e88ef0ab9003b4dc8f34cf0341105ac3cdb7e  
+- **SHA-256** : alaf8eeaa7fda7ced591a72c572a12c2298ddb763defaa36ce5b17be14  
+
+#### 2. Résultats de détection  
+
+- 47 moteurs antivirus sur 69 détectent le fichier comme malveillant  
+- Classifications récurrentes :
+  - Trojan  
+  - Spyware  
+  - Keylogger  
+  - Win32  
+
+Exemples :
+- Kaspersky : HEUR:Trojan-Spy.Win32.Keylogger  
+- ESET : Spy.KeyLogger  
+- Avast / AVG : Win32:Trojan-gen  
+
+#### 3. Comparaison avec bases existantes  
+
+- Détections multi-éditeurs confirmant des signatures connues  
+- Analyses sandbox (CAPE Sandbox, Zenbox)  
+- Correspondance avec MITRE ATT&CK :
+  - Persistence  
+  - Credential Access  
+  - Input Capture  
+  - Registry Modification  
+  - Process Injection  
+
+### Conclusion  
+
+L’échantillon est un malware déjà référencé.  
+Il correspond à des signatures et comportements documentés, principalement identifié comme un Trojan de type keylogger Win32.
+
+---
+
+## 4. US 3 – Analyse statique
+
+### Objectif  
+Comprendre la structure, les dépendances et les fonctionnalités du malware sans l’exécuter.
+
+### Outils utilisés  
+- PEStudio  
+- IDA  
+
+### Résultats  
+
+#### Fonctions principales identifiées  
+- Forte utilisation de la RAM et du processeur  
+- Ralentissement significatif du système  
+
+#### Analyse des imports  
+- Utilisation quasi exclusive de la bibliothèque standard C++  
+- Absence d’appels directs aux API Windows critiques  
+- Indication d’une volonté d’évasion et de dissimulation  
+
+#### Analyse des chaînes  
+Présence d’API sensibles :
+- VirtualProtect  
+- VirtualQuery  
+- GetAsyncKeyState  
+- GetKeyState  
+
+Ces chaînes suggèrent une résolution dynamique des API.
+
+#### Analyse des sections  
+- 8 sections  
+- Entropie moyenne autour de 5  
+- Absence de packing ou chiffrement avancé  
+
+#### Analyse fonctionnelle  
+
+| API | Comportement associé |
+|-----|----------------------|
+| VirtualProtect | Injection mémoire |
+| VirtualQuery | Évasion |
+| GetAsyncKeyState | Keylogging |
+| GetKeyState | Surveillance utilisateur |
+
+#### Analyse avec IDA  
+- Copie du malware dans un autre répertoire pour persistance  
+- Configuration SMTP intégrée  
+- Envoi du fichier `log.txt` par email via `smtp.gmail.com`  
+- Identifiants SMTP en clair  
+- Indices suggérant une origine chinoise du malware  
+
+---
+
+## 5. US 4 – Analyse dynamique
+
+### Objectif  
+Observer le comportement réel du malware à l’exécution.
+
+### Observations  
+
+#### Modifications système  
+- Surcharge CPU  
+- Latence importante  
+- Surchauffe de la machine virtuelle  
+
+#### Activités réseau  
+- Pics d’activité Ethernet  
+- Communications sortantes suspectes  
+
+#### Fichiers et processus  
+- Création d’un dossier `Windsyst`  
+- Création d’un fichier `log`  
+- Le fichier contient toutes les frappes clavier de l’utilisateur  
+
+### Conclusion  
+
+Le comportement observé confirme qu’il s’agit d’un keylogger actif.
+
+---
+
+## 6. US 5 – Évaluation des risques
+
+### Impacts  
+- Capture des frappes clavier  
+- Compromission potentielle des identifiants  
+- Exfiltration de données par email  
+- Dégradation importante des performances système  
+
+### Niveau de risque  
+Élevé
+
+### Recommandations  
+- Isolation immédiate de la machine  
+- Suppression complète du malware  
+- Réinitialisation des identifiants  
+- Mise à jour du système  
+- Renforcement des outils de sécurité  
+
+---
+
+# PARTIE 3 – ANALYSE FORENSIC USB
+
+## 7. US 9 – Identification de la clé USB utilisée
+
+### Objectif  
+Identifier le numéro de série unique de la clé USB utilisée sur le poste compromis.
+
+### Outil utilisé  
+- Registry Explorer  
+
+### Méthodologie  
+- Chargement de la ruche SYSTEM  
+- Analyse du chemin :
+
+
+
+### Résultats  
+
+- **Périphérique** : SanDisk Cruzer Blade  
+- **Numéro de série (USB Serial / UID)** :
+
+
+
+### Conclusion  
+Le numéro de série unique de la clé USB a été extrait avec succès.
+
+---
+
+## 8. US 10 – Chronologie de la fuite de données
+
+### Objectif  
+Déterminer les dates et heures d’utilisation de la clé USB afin de les corréler avec une éventuelle fuite de données.
+
+### Méthodologie  
+- Exploitation des champs temporels du registre :
+  - First Installed  
+  - Last Connected  
+
+### Horodatages  
+
+- **First Installed** : 2020-02-03 12:12:32  
+- **Last Connected** : 2020-02-03 12:44:21  
+
+### Chronologie des événements  
+
+| Date / Heure        | Événement |
+|---------------------|-----------|
+| 2020-02-03 12:12:32 | Première installation de la clé USB |
+| 2020-02-03 12:44:21 | Connexion de la clé USB |
+| 2020-02-03 12:45:00 | Retrait de la clé USB |
+
+### Conclusion  
+
+Les horodatages permettent d’établir une chronologie claire et exploitable de l’utilisation de la clé USB, pouvant être corrélée avec les événements de sécurité et une potentielle fuite de données.
