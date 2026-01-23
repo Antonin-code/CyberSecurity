@@ -23,4 +23,4 @@ La présence d’un fichier chiffré suspect sur le disque, combinée à une act
 -----------------------------------------------------------------------
 Conclusion :
 
-L’analyse croisée RAM / disque a permis de corréler un fichier suspect présent sur le disque avec un environnement mémoire actif au moment de l’acquisition. Malgré des limitations techniques liées à la compatibilité de Volatility avec la version récente de Windows, les éléments recueillis permettent de reconstruire un scénario d’attaque cohérent et de valider les critères d’acceptation de l’US 8.
+L’analyse croisée RAM / disque a permis de corréler un fichier suspect présent sur le disque avec un environnement mémoire actif au moment de l’acquisition. Les éléments recueillis permettent de reconstruire un scénario d’attaque cohérent et de valider les critères d’acceptation de l’US 8.

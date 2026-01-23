@@ -9,8 +9,6 @@ On utilise le chemin : SYSTEM\ControlSet001\Enum\USBSTOR
 
 et on a le résultat :
 
-L’analyse de la ruche SYSTEM via Registry Explorer a permis d’identifier un périphérique de stockage USB précédemment connecté au poste compromis.
-
 Le périphérique correspond à une clé SanDisk Cruzer Blade, dont le numéro de série unique (USB Serial / UID) est :
 
 4C530000281008116284

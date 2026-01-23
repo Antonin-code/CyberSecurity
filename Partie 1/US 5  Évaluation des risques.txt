@@ -1,10 +1,10 @@
 Le malware agit comme un keylogger, permettant la capture des frappes clavier de l’utilisateur.
 Ce comportement entraîne un risque élevé de compromission des identifiants, mots de passe et données sensibles.
 De plus, son exécution provoque une dégradation des performances du système, rendant la machine instable et ralentissant son utilisation.
-Toutes les informations sont envoyés sur un serveur de messagerie et a une adresse email
+Toutes les informations sont envoyés sur un serveur de messagerie et a une adresse email en chine
 ------------------------------------------------------------------
 
-Au regard de la nature du malware et de ses capacités de surveillance des entrées clavier, le niveau de risque est évalué comme élevé.
+Au regard de la nature du malware et de ses capacités de surveillance des entrées clavier, nous pensons que le niveau de risque est évalué comme élevé.
 
 --------------------------------------------------------------------
 
